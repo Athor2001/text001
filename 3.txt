@@ -1,0 +1,46 @@
+1<%--
+  Created by IntelliJ IDEA.
+  User: Administrator
+  Date: 2021/5/11
+  Time: 20:27
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>带参数的forwardTo动作标记</title>
+</head>
+<body>
+<%!
+   int i=0;
+%>
+<jsp:forward page="forwardTo.jsp">
+    <jsp:param name="username" value="MrLiu"/>
+    <jsp:param name="password" value="abc123"/>
+</jsp:forward>
+<p>这里的表达式能够输出吗？<%=i%></p>
+</body>
+</html>
+2
+<%--
+  Created by IntelliJ IDEA.
+  User: Administrator
+  Date: 2021/5/11
+  Time: 20:34
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>带参数的forward动作标记2</title>
+</head>
+<body bgcolor="aqua">
+<%
+    String name = request.getParamrter("usernaem");
+    String pw =request.getParameter("password");
+    out.println("您的用户名是："+name+"<br/>");
+    out.println("您的密码是："+pw);
+%>
+
+</body>
+</html>
