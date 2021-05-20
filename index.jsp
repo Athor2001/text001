@@ -1,42 +1,38 @@
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 2021/5/12
-  Time: 19:36
+  Date: 2013/1/1
+  Time: 0:10
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page  language="java" import="java.util.*" pageEncoding="gb2312" %>
-<%String path = request.getContextPath();
-String basePath =request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";%>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01Transitional//EN">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    ��<base href="<%=basePath%>">
-    <title>���Ͽ�����ѧ</title>
-    <meta http-equiv="pragma" content="no-cache">
-    <meta http-equiv="cache-control" content="no-cache">
-    <meta http-equiv="expires" content="0">
-    <meta http-equiv="keywords"content="keyword1,keyword2,keyword3">
-    <meta http-equiv="description" content="This is mypage">
+    <title>网上调查结果</title>
+    <meta http-equiv="description" content="questionaire">
+    <meta http_equiv="content-type"content="text/html";charset="UTF-8">
   </head>
-  <body bgcolor="aqua">
-  <%@include file="top.html"%>>
-  <%
-    String s= request.getParameter("choice");
-    if(s==null)
-      s="1";
-    int choice = Integer.parseInt(s);
-    switch (choice){
-      case 1:%>
-  <%@include file="welcome.html"%>>
-  <%break;
-  case 2:%>
-  <%@include file="feature.html"%>>
-<%break;
-case 3:%>
-  <%@include file="contact.html"%>>
-<%break;
-    }
-%>
+  <center>
+  <body background="1.jpg">
+  <%@include file="top.html"%>
+  <form name="form1" method="post" action="hobby.jsp">
+    <p>欢迎参加网上调查</p>
+    <p>姓名
+      <input name="name" type="text" id="name" size="16">
+    </p>
+    <p>年龄
+      <input name="name" type="number" id="number" size="16">
+    </p>
+    <p>性别
+    <input name="sex" type="radio" value="male" checked>
+      男
+      <input name="sex" type="radio" value="female">
+    女</p>
+    <p>
+    <input type="submit" name="Submit" value="下一步">
+    <input type="reset" name="Submit2" value="重置">
+    </p>
+  </form>
+  </center>
   </body>
 </html>
